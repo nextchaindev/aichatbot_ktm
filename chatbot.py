@@ -27,7 +27,7 @@ def return_answer(question):
 train_data = pd.read_csv('trained.csv')
 
 #model = SentenceTransformer("input your directory")
-model = SentenceTransformer("C:\\Users\\ohzfl\\aichatbot_ktm")
+model = SentenceTransformer("C:\\Users\\ohzfl\\aichatbot_ktm\\ko-sroberta-multitask")
 
 train_data['embedding'] = train_data.apply(lambda x : text2array(x.embedding), axis = 1)
 
