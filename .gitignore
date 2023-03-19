@@ -7,3 +7,9 @@
 *.model
 
 ko-sroberta-multitask\
+
+tem*.py
+
+*.tsv
+
+vocab.txt

@@ -29,7 +29,7 @@ def return_answer(question):
 train_data = pd.read_csv('trained_kt.csv')
 
 #model = SentenceTransformer("input your directory")
-model = SentenceTransformer("C:\\Users\\ohzfl\\aichatbot_ktm\\ko-sroberta-multitask")
+model = SentenceTransformer("C:\\Users\\ohzfl\\aichatbot_ktm\\output\\sts-2023-03-18_19-29-36")
 
 train_data['embedding'] = train_data.apply(lambda x : text2array(x.embedding), axis = 1)
 
