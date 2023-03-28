@@ -13,3 +13,7 @@ tem*.py
 *.tsv
 
 vocab.txt
+
+*.png
+
+*.md
