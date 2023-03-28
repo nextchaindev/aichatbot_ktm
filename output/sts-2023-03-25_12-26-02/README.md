@@ -82,30 +82,33 @@ The model was trained with the parameters:
 
 **DataLoader**:
 
-`torch.utils.data.dataloader.DataLoader` of length 13 with parameters:
+`torch.utils.data.dataloader.DataLoader` of length 6 with parameters:
 ```
-{'batch_size': 8, 'sampler': 'torch.utils.data.sampler.RandomSampler', 'batch_sampler': 'torch.utils.data.sampler.BatchSampler'}
+{'batch_size': 16, 'sampler': 'torch.utils.data.sampler.RandomSampler', 'batch_sampler': 'torch.utils.data.sampler.BatchSampler'}
 ```
 
 **Loss**:
 
-`sentence_transformers.losses.DenoisingAutoEncoderLoss.DenoisingAutoEncoderLoss` 
+`sentence_transformers.losses.MultipleNegativesRankingLoss.MultipleNegativesRankingLoss` with parameters:
+  ```
+  {'scale': 20.0, 'similarity_fct': 'cos_sim'}
+  ```
 
 Parameters of the fit()-Method:
 ```
 {
-    "epochs": 350,
-    "evaluation_steps": 0,
-    "evaluator": "NoneType",
+    "epochs": 500,
+    "evaluation_steps": 10,
+    "evaluator": "sentence_transformers.evaluation.EmbeddingSimilarityEvaluator.EmbeddingSimilarityEvaluator",
     "max_grad_norm": 1,
     "optimizer_class": "<class 'torch.optim.adamw.AdamW'>",
     "optimizer_params": {
-        "lr": 3e-05
+        "lr": 2e-05
     },
-    "scheduler": "constantlr",
+    "scheduler": "WarmupLinear",
     "steps_per_epoch": null,
-    "warmup_steps": 10000,
-    "weight_decay": 0
+    "warmup_steps": 300,
+    "weight_decay": 0.01
 }
 ```
 
