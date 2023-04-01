@@ -17,7 +17,7 @@ def cos_sim(A, B):
     return dot(A, B)/(norm(A)*norm(B))
 
 # 클래스 기반 Namespace
-class ChatNamepsace(Namespace):
+class ChatNamespace(Namespace):
 
     def on_connect(self):
         pass
@@ -35,7 +35,7 @@ class ChatNamepsace(Namespace):
         train_data['score'] = train_data.apply(lambda x: cos_sim(x['embedding'], embedding), axis=1)
         tem = train_data.loc[train_data['score'].idxmax()]
         room = session.get('room')
-        emit('message', {'msg': "Q : " + data['msg'] + '\n' + tem['A']})
+        emit('message', {'msg': "Input : " + data['msg'] + '\nQ: ' + tem['Q']+ '\nA: ' + tem['A']})
 
     def on_left(self, data):
         room = session.get('room')

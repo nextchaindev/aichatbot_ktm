@@ -11,8 +11,8 @@ def create_app(debug=False):
 
     socketio.init_app(app)
 
-    from app.events import ChatNamepsace
-    socketio.on_namespace(ChatNamepsace('/chat'))
+    from app.events import ChatNamespace
+    socketio.on_namespace(ChatNamespace('/chat'))
 
     from app.routes import main as main_blueprint
     app.register_blueprint(main_blueprint)
